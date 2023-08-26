@@ -4,14 +4,17 @@
 // @import "_header";
 // @import "_swiper";
 
-html,body{
+body{
     width: 100%;
     font-size: 14px;
 }
 
 .wrapper{
     width: 100%;
-    background-color: #1C291D;
+    background-color: #010101;
+    color: #fff;
+    font-family: raleway_f, sans-serif;
+    line-height: 1.55;
 }
 
 .container{

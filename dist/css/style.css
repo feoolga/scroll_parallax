@@ -1,16 +1,9 @@
 @charset "UTF-8";
 
 @font-face {
-  font-family: "Inter";
-  src: url(../fonts/Inter-VariableFont_slnt,wght.woff2) format(woff2), url(Inter-VariableFont_slnt,wght.woff) format(woff);
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Quantico";
-  src: url(../fonts/Quantico-Bold.woff2);
-  font-weight: 400;
+  font-family: raleway_f;
+  src: url(../fonts/raleway-regular.woff2);
+  font-weight: 900;
 }
 
 /*Обнуление*/
@@ -103,7 +96,6 @@ h6 {
   font-weight: 400;
 }
 
-html,
 body {
   width: 100%;
   font-size: 14px;
@@ -111,7 +103,10 @@ body {
 
 .wrapper {
   width: 100%;
-  background-color: #1C291D;
+  background-color: #010101;
+  color: #fff;
+  font-family: raleway_f, sans-serif;
+  line-height: 1.55;
 }
 
 .container {
@@ -119,7 +114,38 @@ body {
   margin: 0 auto;
 }
 
-.header {
+.main-header {
   color: #fff;
   width: 100%;
+}
+
+.layers {
+  height: 100vh;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.layer {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.layer img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center top;
+     object-position: center top;
 }
