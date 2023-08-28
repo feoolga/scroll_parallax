@@ -1,0 +1,31 @@
+.main-article {
+    color: $colormain;
+    min-height: 100vh;
+    position: relative;
+    // width: 100vw;
+    overflow: hidden;
+    img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        min-width: 100%;
+    }
+
+    &__content {
+        max-width: 700px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+        transform: translate3d(0, calc(var(--scrollTop) / 6.4), 0);
+        transition: $transition;
+        will-change: transform;
+        p{
+            margin-top: 100px;
+        }
+    }
+
+    &__title {
+        margin-top: 100px;
+    }
+}

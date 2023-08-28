@@ -46,6 +46,7 @@ let path = {
         img: projectFolder + "/img/",
         js: projectFolder + "/js/",
         fonts: projectFolder + "/fonts/",
+        libs: projectFolder + "/libs/",
     },
     src:{
         html: [sourceFolder + "/*.html", "!" + sourceFolder + "/_*.html"],
@@ -53,12 +54,14 @@ let path = {
         img: sourceFolder + "/img/**/*.{jpg,png,svg,gif,ico,webp}",
         js: sourceFolder + "/js/*.js",
         fonts: sourceFolder + "/fonts/*.*",
+        libs: sourceFolder + "/libs/**/*.*",
     },
     watch:{
         html: sourceFolder + "/**/*.html",
         css: sourceFolder + "/scss/**/*.scss",
         img: sourceFolder + "/img/**/*.{jpg,png,svg,gif,ico,webp}",
-        js: sourceFolder + "/js/**/*.js",
+        js: sourceFolder + "/js/*.js",
+        libs: sourceFolder + "/libs/**/*.*",
     },
     clean: "./" + projectFolder + "/"
 }
@@ -79,7 +82,6 @@ function images(){
                 quality: 70
             })
         )
-
         .pipe(src(path.src.img))
         .pipe(newer(path.build.img))
         .pipe(
@@ -152,6 +154,11 @@ function fonts(){
 //         .pipe(dest(path.build.fonts))
 // }
 
+function libs(){
+    return src(path.src.libs)
+        .pipe(dest(path.build.libs))
+}
+
 function js(){
     return src(path.src.js)
         .pipe(concat('script.js'))
@@ -181,11 +188,12 @@ function svgSprite(){
         .pipe(dest(path.build.img))
 }
 
-function watchFiles(params){
+function watchFiles(){
     gulp.watch([path.watch.html],html)
     gulp.watch([path.watch.css],css)
     gulp.watch([path.watch.js],js)
     gulp.watch([path.watch.img],images)
+    gulp.watch([path.watch.libs],libs)
 }
 
 function clean(){
@@ -197,10 +205,11 @@ gulp.task('deploy', function() {
       .pipe(ghPages());
   });
 
-let build = gulp.series(clean, gulp.parallel(js, css, html, images, fonts))
+let build = gulp.series(clean, gulp.parallel(js, css, html, images, fonts, libs))
 let watch = gulp.parallel(build, browserSync, watchFiles)
 
 exports.fonts = fonts
+exports.libs = libs
 exports.images = images
 exports.js = js
 exports.css = css

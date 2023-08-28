@@ -1,0 +1,31 @@
+.anim.left{
+    transform: translateX(-20%);
+    transition: all 1s;
+    opacity: 0;
+}
+
+.anim.left.active{
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.anim.left.activeBack{
+    transform: translateX(-20%);
+    opacity: 0.5;
+}
+
+.anim.right{
+    transform: translateX(20%);
+    transition: all 1s;
+    opacity: 0;
+}
+
+.anim.right.active{
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.anim.right.activeBack{
+    transform: translateX(-20%);
+    opacity: 0.5;
+}

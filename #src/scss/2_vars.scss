@@ -1,3 +1,6 @@
-$colormain: #224523;
-$colorsecond: #275C29;
+$colormain: #e7e7e0;
+// $colorsecond: #275C29;
 
+$index: calc(1vw + 1vh);
+
+$transition: transform .75s cubic-bezier(0.075, 0.5, 0, 1);

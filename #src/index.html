@@ -3,17 +3,14 @@
     @@include('_head.html',{
         "title": "Главная",
     })
-<body>
+<body id="scrollArea">
     <div class="wrapper">
-        @@include('_header.html',{})
+        <div class="content">
+            @@include('_header.html',{})
 
-        <article class="main-article">
-            <img src="img/dungeon.jpg" alt="">
-            <div class="main-article__content">
-                <h2 class="main-article__title">Продолжение следует</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore consectetur accusantium aspernatur libero, aut sunt odio qui? Quisquam nam sint temporibus alias, ex laborum facere. Non aperiam itaque, harum quos dolorem voluptatum.</p>
-            </div>
-        </article>
+            @@include('_article.html',{})
+        </div>
     </div>
+    
 </body>
 </html>
