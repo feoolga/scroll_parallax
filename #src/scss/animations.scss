@@ -29,3 +29,25 @@
     transform: translateX(-20%);
     opacity: 0.5;
 }
+
+.anim.top{
+    transform: scale(1, -1);
+    transition: all 1s;
+    opacity: 0;
+}
+
+.anim.top.active{
+    transform: scale(1,1);
+    opacity: 1;
+}
+
+.anim.rolling{
+    transform: translateX(250%) rotate(0.5turn);
+    transition: all 5s;
+    opacity: 0;
+}
+
+.anim.rolling.active{
+    transform: translateX(0) rotate(0);
+    opacity: 1;
+}
