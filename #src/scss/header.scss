@@ -39,16 +39,20 @@
             text-transform: uppercase;
             font-weight: 900;
             transition: $transition;
+            margin-top: calc($index * -2.9);
         }
     
         &__caption {
             font-size: calc($index * 1.1);
             letter-spacing: calc($index / 3.2);
+            margin-bottom: calc($index * 0.7);
         }
     
         &__title {
             font-size: calc($index * 2.5);
             letter-spacing: calc($index / 2.2);
+            width: min-content;
+            line-height: calc($index * 2.6);
         }
     
         &__base {
