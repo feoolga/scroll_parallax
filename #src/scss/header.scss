@@ -21,7 +21,6 @@
             // right: 0;
             // bottom: 0;
             overflow: hidden;
-            will-change: transform;
             transition: $transition;
             img{
                 height: 100%;
@@ -34,8 +33,7 @@
         &__header {
             z-index: 1;
             text-align: center;
-            transform: translate3d(0, calc(var(--scrollTop) / 2), 0);
-            will-change: transform;
+            // transform: translate3d(0, calc(var(--scrollTop) / 2), 0);
             text-transform: uppercase;
             font-weight: 900;
             transition: $transition;
@@ -56,17 +54,17 @@
         }
     
         &__base {
-            transform: translate3d(0, calc(var(--scrollTop) / 1.6), 0);
+            // transform: translate3d(0, calc(var(--scrollTop) / 1.6), 0);
             z-index: 0;
         }
 
         &__middle {
-            transform: translate3d(0, calc(var(--scrollTop) / 2.5), 0);
+            // transform: translate3d(0, calc(var(--scrollTop) / 2.5), 0);
             z-index: 2;
         }
     
         &__front {
-            transform: translate3d(0, calc(var(--scrollTop) / 5.7), 0);
+            // transform: translate3d(0, calc(var(--scrollTop) / 5.7), 0);
             z-index: 3;
         }
     }

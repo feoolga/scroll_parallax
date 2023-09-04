@@ -6,8 +6,25 @@
 .gallery {
     display: flex;
     &__left {
+        gap: calc($gap * 2);
+        will-change: transform;
     }
 
     &__right {
+        gap: $gap;
+        will-change: transform;
     }
+
+    &__item{
+        max-width: calc($index * 20);
+        max-height: 180vh;
+        border-radius: 8px;
+    }
+}
+
+.gallery > *{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

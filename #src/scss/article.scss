@@ -26,8 +26,9 @@
         .menu{
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: top;
             font-size: 20px;
+            margin-top: calc($index * 5);
         }
         .moving_circle{
             margin-top: 50px;
@@ -58,4 +59,25 @@
     &__title {
         margin-top: 100px;
     }
+}
+
+.level2 li{
+    background-color: bisque;
+    padding: 2px 5px;
+    position: relative;
+    a {
+        color: rgb(37, 12, 0);}
+}
+
+.level3{
+    position: absolute;
+    top: 0;
+    left: 130px;
+}
+.level3 li{
+    background-color: rgb(115, 177, 174);
+    padding: 2px 5px;
+    position: relative;
+    a {
+        color: rgb(0, 20, 51);}
 }
