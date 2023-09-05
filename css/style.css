@@ -290,7 +290,7 @@ a {
 .level3 {
   position: absolute;
   top: 0;
-  left: 130px;
+  left: 100%;
 }
 
 .level3 li {
@@ -301,6 +301,10 @@ a {
 
 .level3 li a {
   color: rgb(0, 20, 51);
+  display: block;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
 
 .blocks {
