@@ -237,20 +237,6 @@ a {
   margin-top: 100px;
 }
 
-.main-article__content .menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: top;
-      -ms-flex-align: top;
-          align-items: top;
-  font-size: 20px;
-  margin-top: calc((1vw + 1vh) * 5);
-}
-
 .main-article__content .moving_circle {
   margin-top: 50px;
 }
@@ -275,36 +261,6 @@ a {
 
 .main-article__title {
   margin-top: 100px;
-}
-
-.level2 li {
-  background-color: bisque;
-  padding: 2px 5px;
-  position: relative;
-}
-
-.level2 li a {
-  color: rgb(37, 12, 0);
-}
-
-.level3 {
-  position: absolute;
-  top: 0;
-  left: 100%;
-}
-
-.level3 li {
-  background-color: rgb(115, 177, 174);
-  padding: 2px 5px;
-  position: relative;
-}
-
-.level3 li a {
-  color: rgb(0, 20, 51);
-  display: block;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
 }
 
 .blocks {
@@ -439,4 +395,159 @@ a {
   background-position: center;
   bottom: calc((1vw + 1vh) * -4.5);
   left: 0;
+}
+
+.container nav {
+  width: 70%;
+  margin: 50px auto;
+  position: relative;
+  z-index: 20;
+}
+
+.menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: top;
+      -ms-flex-align: top;
+          align-items: top;
+  font-size: 20px;
+  margin-top: calc((1vw + 1vh) * 5);
+}
+
+.menu-parent span {
+  margin-right: 10px;
+  padding-right: 25px;
+  position: relative;
+}
+
+.menu-parent span::after {
+  content: "";
+  width: 0px;
+  height: 0px;
+  font-size: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 10px solid #fff;
+  display: inline-block;
+  -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+  position: absolute;
+  top: 10px;
+  right: 0;
+}
+
+.level_2 .menu-parent span::after {
+  content: "";
+  width: 0px;
+  height: 0px;
+  font-size: 0;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 10px solid #000;
+  display: inline-block;
+  -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+  position: absolute;
+  top: 7px;
+  right: 0;
+}
+
+.level_2 {
+  -webkit-transform-origin: 0 0;
+      -ms-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transform: rotateX(-90deg);
+          transform: rotateX(-90deg);
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  opacity: 0;
+}
+
+.level_2 li {
+  background-color: bisque;
+  padding: 2px 10px 2px 5px;
+  position: relative;
+}
+
+.level_2 li a,
+.level_2 li span {
+  color: rgb(37, 12, 0);
+}
+
+.level_3 {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  -webkit-transform-origin: 0 0;
+      -ms-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transform: rotateY(-90deg);
+          transform: rotateY(-90deg);
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  opacity: 0;
+}
+
+.level_3 li {
+  background-color: rgb(115, 177, 174);
+  padding: 2px 5px;
+  position: relative;
+}
+
+.level_3 li a {
+  color: rgb(0, 20, 51);
+  display: block;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.menu-parent.openx .level_2 {
+  -webkit-transform: rotateX(0);
+          transform: rotateX(0);
+  opacity: 1;
+}
+
+.level_3.openy {
+  -webkit-transform: rotateY(0);
+          transform: rotateY(0);
+  opacity: 1;
+}
+
+body.mouse .menu-parent:hover .level_2 {
+  -webkit-transform: rotateX(0);
+          transform: rotateX(0);
+  opacity: 1;
+}
+
+body.mouse .level_2 li:hover .level_3 {
+  -webkit-transform: rotateY(0);
+          transform: rotateY(0);
+  opacity: 1;
+}
+
+body.mouse > .menu-parent:hover .arrow-vert {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+body.mouse .level_2 .menu-parent:hover .arrow-hor {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
 }

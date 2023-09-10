@@ -1,8 +1,5 @@
 ;(function() {
-	// window.addEventListener('scroll', e => {
-    //     document.body.style.cssText += `--scrollTop: ${this.scrollY}px`
-    // })
-    
+   
     gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
 
     if(ScrollTrigger.isTouch !== 1){
@@ -52,6 +49,10 @@
         });
     }
 
+})();
+
+(function(){
+
     let isMobile = {
         Android: function() {
             return navigator.userAgent.match(/Android/i);
@@ -73,9 +74,41 @@
         }
     };
 
-    // if (isMobile.any()) {
-    //     alert('is mobile !');
-    // } else {
-    //     alert('is computer !');
-    // }
+    let body = document.querySelector('body')
+
+    if (isMobile.any()) {
+        body.classList.add('touch')
+        
+        document.querySelectorAll('.menu-button').forEach(button => {
+            button.addEventListener('click', function(event){
+                document.querySelectorAll('.menu-parent').forEach(item => {
+                    item.classList.remove('openx')
+                })
+                event._isClick = true
+                button.parentElement.classList.toggle('openx')
+            })
+        })
+
+        document.body.addEventListener('click', function(event){
+            if( event._isClick == true ||
+                event.target.classList.contains('menu-button') == true ||
+                event.target.classList.contains('level_2') == true ||
+                event.target.tagName === 'LI'
+                )
+                {
+                    console.log(event.target);
+                    return
+                }
+
+                document.querySelectorAll('.menu-parent').forEach(item => {
+                    item.classList.remove('openx')
+                    console.log(event.target);
+                })
+
+        },true)
+
+    } else {
+        body.classList.add('mouse')
+    }
+
 })();
