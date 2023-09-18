@@ -14,7 +14,7 @@
 
     &__content {
         max-width: 700px;
-        margin: 0 auto;
+        margin: 200px auto;
         position: relative;
         z-index: 1;
         transform: translate3d(0, calc(var(--scrollTop) / 6.4), 0);

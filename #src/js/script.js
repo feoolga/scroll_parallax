@@ -94,17 +94,17 @@
                 event.target.classList.contains('menu-button') == true ||
                 event.target.classList.contains('level_2') == true ||
                 event.target.tagName === 'LI'
-                )
-                {
+                ){
                     console.log(event.target);
+                    event._isClick = false
                     return
-                }
+                } else {
 
                 document.querySelectorAll('.menu-parent').forEach(item => {
                     item.classList.remove('openx')
                     console.log(event.target);
                 })
-
+            }
         },true)
 
     } else {
@@ -112,3 +112,20 @@
     }
 
 })();
+
+// (function(){
+//     let body = document.querySelector('body')
+//     // document.querySelector('.common').addEventListener('click', function(e){
+//     //     e._clickened = "Нажали на общую область"
+//     // })
+//     document.querySelector('.red-box').addEventListener('click', function(e){
+//         e._clickened = true
+//     })
+//     document.body.addEventListener('click', function(e){
+//         if(e._clickened == true){
+//             console.log("Нажали на красную область");
+//         } else {
+//             console.log("Нажали на другую область");
+//         }
+//     })
+// })();

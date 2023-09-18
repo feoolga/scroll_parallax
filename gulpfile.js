@@ -47,6 +47,7 @@ let path = {
         js: projectFolder + "/js/",
         fonts: projectFolder + "/fonts/",
         libs: projectFolder + "/libs/",
+        video: projectFolder + "/video/",
     },
     src:{
         html: [sourceFolder + "/*.html", "!" + sourceFolder + "/_*.html"],
@@ -55,6 +56,7 @@ let path = {
         js: sourceFolder + "/js/*.js",
         fonts: sourceFolder + "/fonts/*.*",
         libs: sourceFolder + "/libs/**/*.*",
+        video: sourceFolder + "/video/**/*.*",
     },
     watch:{
         html: sourceFolder + "/**/*.html",
@@ -62,6 +64,7 @@ let path = {
         img: sourceFolder + "/img/**/*.{jpg,png,svg,gif,ico,webp}",
         js: sourceFolder + "/js/*.js",
         libs: sourceFolder + "/libs/**/*.*",
+        video: sourceFolder + "/video/**/*.*",
     },
     clean: "./" + projectFolder + "/"
 }
@@ -159,6 +162,11 @@ function libs(){
         .pipe(dest(path.build.libs))
 }
 
+function video(){
+    return src(path.src.video)
+        .pipe(dest(path.build.video))
+}
+
 function js(){
     return src(path.src.js)
         .pipe(concat('script.js'))
@@ -205,11 +213,12 @@ gulp.task('deploy', function() {
       .pipe(ghPages());
   });
 
-let build = gulp.series(clean, gulp.parallel(js, css, html, images, fonts, libs))
+let build = gulp.series(clean, gulp.parallel(js, css, html, images, fonts, libs, video))
 let watch = gulp.parallel(build, browserSync, watchFiles)
 
 exports.fonts = fonts
 exports.libs = libs
+exports.video = video
 exports.images = images
 exports.js = js
 exports.css = css

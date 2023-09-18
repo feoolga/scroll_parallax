@@ -28,3 +28,36 @@
     flex-direction: column;
     align-items: center;
 }
+
+.video{
+    max-width: 90%;
+    border: 3px solid #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: box-shadow .3s ease;
+}
+
+.video:hover{
+    box-shadow: 0 0 15px #ffffff;
+}
+
+.video video{
+    width: 100%;
+}
+
+.audio{
+    width: 100%;
+    height: 100px;
+}
+
+.common{
+    width: 100%;
+    height: 700px;
+    background-color: #c5afaf;
+}
+
+.red-box{
+    width: 50%;
+    height: 50%;
+    background-color: red;
+}
